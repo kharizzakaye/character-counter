@@ -16,7 +16,7 @@ const HeaderComponent = (props: Props) => {
               height="30"
               className="d-inline-block align-top"
             />{' '}
-            Character Counter
+            Text Analyzer
           </Navbar.Brand>
         </Container>
       </Navbar>
