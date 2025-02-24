@@ -101,7 +101,7 @@ const TextAreaComponent: React.FC = () => {
             )}
 
             <Form>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Group className="mb-3">
                     <Form.Control
                         as="textarea"
                         rows={4}
