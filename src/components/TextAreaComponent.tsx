@@ -58,6 +58,21 @@ const TextAreaComponent: React.FC = () => {
         setHasExceededCharacterLimit(false);
     };
 
+    const onExcludeSpacesChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const isChecked = event.target.checked;
+        setExcludeSpaces(isChecked);
+
+        if (isChecked) 
+        {
+            const textWithoutSpaces = textData.replace(/\s/g, "");
+            calculateTotalCharacters(textWithoutSpaces);
+        } 
+        else 
+        {
+            calculateTotalCharacters(textData);
+        }
+    };
+
     const onSetCharacterLimitChange = (event: ChangeEvent<HTMLInputElement>) => {
         const isChecked = event.target.checked;
         setCharacterLimit(isChecked);
@@ -116,7 +131,7 @@ const TextAreaComponent: React.FC = () => {
                                 id="chkExcludeSpaces"
                                 label="Exclude spaces"
                                 checked={excludeSpaces}
-                                onChange={(event: ChangeEvent<HTMLInputElement>) => setExcludeSpaces(event.target.checked)}
+                                onChange={ onExcludeSpacesChange}
                             />
                         </Col>
 
